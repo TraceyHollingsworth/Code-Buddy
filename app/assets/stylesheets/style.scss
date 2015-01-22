@@ -1,0 +1,237 @@
+/* @import url('//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic|PT+Serif:400,700,400italic|Oswald:400,700|Quattrocento:400,700|Dancing+Script:400,700'); */
+
+$body_color: #0abfbc;
+$button_color: #FC354C;
+$success_color: #9FF07B;
+
+body {
+  background-color: $body_color;
+  font-family: 'PT Sans';
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6,
+.top-bar-section ul li > a,
+button, .button {
+  font-family: 'PT Sans';
+}
+
+.flash {
+  text-align: left;
+
+  p, ul {
+    margin-bottom: 0;
+  }
+}
+
+.wrapper {
+  padding: 30px;
+
+  a, a:hover {
+    color: black;
+  }
+}
+
+.alert-box.success,
+.alert-box.notice {
+  background-color: $success_color;
+  border-color: darken($success_color, 12%);
+  color: #333;
+}
+
+// ==========================
+// NAV BAR
+// ==========================
+
+$top-bar-height: 65px;
+
+.top-bar {
+
+  .top-bar-section li:not(.has-form) a:not(.button),
+  &, li a, .name h1 a,
+  &.expanded .title-area {
+    background: white;
+    color: black;
+    height: $top-bar-height;
+    line-height: $top-bar-height;
+  }
+
+  .logo {
+    margin-top: -5px;
+    margin-left: 20px;
+  }
+
+  .top-bar-section li:not(.has-form) a:not(.button) {
+    transition: background .2s;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  .name h1 a,
+  .namesmall h1 a {
+    font-family: 'Dancing Script';
+    font-weight: bold;
+    font-size: 40px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .top-bar-section .has-dropdown {
+    & > a:after {
+      border-color: black transparent transparent;
+      margin-top: 5px;
+    }
+    ul {
+      text-align: center;
+    }
+  }
+}
+
+.top-bar .toggle-topbar.menu-icon a {
+  color: #000;
+}
+
+// ==========================
+// BUDDIES INDEX PAGE
+// ==========================
+
+// SEARCH BAR
+// ----------------
+
+.search {
+  input, input[type="text"] {
+    padding: 0.5rem 1em;
+  }
+}
+
+
+// ==========================
+// PROFILE PHOTOS
+// ==========================
+
+  img.profile {
+    &.tiny {
+      border-radius: 50px;
+      margin-right: 4px;
+    }
+  }
+
+// ==========================
+// BUDDY DISPLAY
+// ==========================
+
+.buddy {
+  padding-top: 20px;
+}
+
+// ==========================
+// FORMS
+// ==========================
+
+button, .button,
+a.button, a.button:hover {
+  background-color: $button_color;
+  color: white;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    background-color: darken($button_color, 17%);
+  }
+}
+
+input[type="text"], input[type="password"],
+input[type="date"], input[type="datetime"],
+input[type="datetime-local"], input[type="month"],
+input[type="week"], input[type="email"],
+input[type="number"], input[type="search"],
+input[type="tel"], input[type="time"],
+input[type="url"], input[type="color"], textarea,
+input {
+  padding: 1.5rem 1em;
+  border: none;
+  box-shadow: none;
+  margin-bottom: .9em;
+  font-family: 'Quattrocento';
+}
+
+textarea {
+  padding: .75rem 1em;
+}
+
+::-webkit-input-placeholder { color:#777; }
+::-moz-placeholder { color:#777; } /* firefox 19+ */
+:-ms-input-placeholder { color:#777; } /* ie */
+input:-moz-placeholder { color:#777; }
+
+// ==========================
+// SIGN UP FORM
+// ==========================
+
+.sign-up-form {
+
+  input[type=submit] {
+    width: 100%;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.4);
+  }
+
+  a {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+// ==========================
+// REVIEW
+// ==========================
+
+
+.review {
+  p {
+    margin: 1.25rem 0;
+  }
+
+  .star {
+    background-image: asset-url("star.png", image);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+    &.empty {
+      background-image: asset-url("empty_star.png", image);
+    }
+  }
+
+  .user {
+    h5, img {
+      display: inline;
+      vertical-align: middle;
+    }
+  }
+
+  .rating {
+    p {
+      margin: 0;
+    }
+
+    h6, form input {
+      vertical-align: baseline;
+    }
+
+    .voting {
+      h6, form {
+        display: inline-block;
+        margin-right: 8px;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,22 @@
+<div class="row buddy">
+  <h2><%= @buddy.title %></h2>
+  <p><%= @buddy.description %></p>
+  <p><%= link_to @buddy.url, @buddy.url, target: "_blank" %></p>
+  <% if signed_in? %>
+    <% if current_user.id == @buddy.user_id %>
+      <%= link_to "Edit", edit_buddy_path %>
+    <% end %>
+    <% if current_user.id == @buddy.user_id  || current_user.admin?%>
+      <%= link_to "Delete", buddy_path(@buddy), method: :delete, id: "delete-buddy" %>
+    <% end %>
+  <% end %>
+  <hr />
+</div>
+
+<%= render "create_reviews_form" %>
+
+<div class="row reviews">
+  <hr />
+  <h3>Reviews:</h3>
+  <%= render "view_reviews" %>
+</div>
